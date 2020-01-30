@@ -1,0 +1,9 @@
+seconds_until_message:
+  default: 1800
+  min: 5
+  type: integer
+  description: "The amounts of seconds until the message is shown."
+message:
+  default: "It seems like you're on the forums for a while, consider taking a break!"
+  type: string
+  description: "The message to display when the staff member is on the forums for too long."
