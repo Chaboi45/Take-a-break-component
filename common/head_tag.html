@@ -4,9 +4,12 @@
       const thisUser = Discourse.User.current(); 
       return thisUser.admin || thisUser.moderator
     }
-    // console.log(settings.message)
-    if (isStaff==true){
-        var today = new Date();
+    
+    
+    //console.log(isStaff())
+    //alert(isStaff())
+    if (isStaff()==true){
+    var today = new Date();
     var getInitScore = today.getSeconds()+(today.getMinutes()*60)+(today.getHours()*3600);
     
     function checkTooLong(){
@@ -20,7 +23,7 @@
     var intervalID = window.setInterval(checkTooLong,1);
     }
     else{
-        console.log("Ignore alert for non-staff members.")
+        console.log("Ignore non-staff users.")
     }
-    
+   
 </script>
