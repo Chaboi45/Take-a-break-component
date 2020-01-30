@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<script type="text/discourse-plugin" version="0.8.13">
+    var isStaff = () => {
+      const thisUser = Discourse.User.current(); 
+      return thisUser.admin || thisUser.moderator
+    }
+    // console.log(settings.message)
+    if (isStaff==true){
+        var today = new Date();
+    var getInitScore = today.getSeconds()+(today.getMinutes()*60)+(today.getHours()*3600);
+    
+    function checkTooLong(){
+        var today1 = new Date();
+        var getNewScore = today1.getSeconds()+(today1.getMinutes()*60)+(today1.getHours()*3600);
+        if ((getNewScore - getInitScore)==settings.seconds_until_message){
+            alert(settings.message);
+        }
+        
+    }
+    var intervalID = window.setInterval(checkTooLong,1);
+    }
+    else{
+        console.log("Ignore alert for non-staff members.")
+    }
+    
+</script>
