@@ -1,5 +1,6 @@
 {
   "name": "Take a break component.",
+  "component": true,
   "about_url": "https://github.com/Chaboi45/Take-a-break-component/blob/master/README.md",
   "license_url": "https://github.com/Chaboi45/Take-a-break-component/blob/master/LICENSE"
 }
