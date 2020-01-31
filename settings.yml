@@ -11,3 +11,7 @@ message_title:
   default: "Take a break!"
   type: string
   description: "The title for the message that is being displayed."
+on_for_non_staff:
+  default: false
+  type: bool
+  description: "Whether to enable this for non-staff users. "
