@@ -1,54 +1,53 @@
 <!DOCTYPE html>
-  <script type="text/x-handlebars" data-template-name="modal/custom-modal">
-  {{#d-modal-body title="custom_modal_title" class="custom-modal"}}
+    <script type="text/x-handlebars" data-template-name="modal/custom-modal">
+    {{#d-modal-body title="custom_modal_title" class="custom-modal"}}
     <p>{{theme-setting 'message'}}</p>
-  {{/d-modal-body}}
-  </script>
+    {{/d-modal-body}}
+    </script>
 
-  <script type="text/discourse-plugin" version="0.8.13">
-    let currentLocale = I18n.currentLocale();
-    I18n.translations[currentLocale].js.custom_modal_title = settings.message_title;
+    <script type="text/discourse-plugin" version="0.8.13">
+        let currentLocale = I18n.currentLocale();
+        I18n.translations[currentLocale].js.custom_modal_title = settings.message_title;
     
-    const showModal = require("discourse/lib/show-modal").default;
-    var isStaff = () => {
-      const thisUser = Discourse.User.current(); 
-      return thisUser.admin || thisUser.moderator
+        const showModal = require("discourse/lib/show-modal").default;
+        let isStaff = () => {
+            const thisUser = Discourse.User.current(); 
+            return thisUser.admin || thisUser.moderator
     }
     // console.log(settings.message)
     if (settings.on_for_non_staff===false){
-    if (isStaff()===true){
-        var today = new Date();
-    var getInitScore = today.getSeconds()+(today.getMinutes()*60)+(today.getHours()*3600);
+        if (isStaff()===true){
+            var today = new Date();
+            var getInitScore = today.getSeconds()+(today.getMinutes()*60)+(today.getHours()*3600);
     
-    function checkTooLong(){
-        var today1 = new Date();
-        var getNewScore = today1.getSeconds()+(today1.getMinutes()*60)+(today1.getHours()*3600);
-        if ((getNewScore - getInitScore)===settings.seconds_until_message){
-            showModal("customModal");
-            clearInterval(intervalID);
+            function checkTooLong(){
+                var today1 = new Date();
+                var getNewScore = today1.getSeconds()+(today1.getMinutes()*60)+(today1.getHours()*3600);
+                if ((getNewScore - getInitScore)===settings.seconds_until_message){
+                    showModal("customModal");
+                    clearInterval(intervalID);
+                }
+            }
+            var intervalID = window.setInterval(checkTooLong,1);
         }
-        
-    }
-    var intervalID = window.setInterval(checkTooLong,1);
+        else{
+            console.log("Ignore alert for non-staff members.")
+        }
     }
     else{
-        console.log("Ignore alert for non-staff members.")
-    }
-    }
-    else{
         var today = new Date();
-    var getInitScore = today.getSeconds()+(today.getMinutes()*60)+(today.getHours()*3600);
+        var getInitScore = today.getSeconds()+(today.getMinutes()*60)+(today.getHours()*3600);
     
-    function checkTooLong(){
-        var today1 = new Date();
-        var getNewScore = today1.getSeconds()+(today1.getMinutes()*60)+(today1.getHours()*3600);
-        if ((getNewScore - getInitScore)===settings.seconds_until_message){
-            showModal("customModal");
-            clearInterval(intervalID);
-        }
+        function checkTooLong(){
+            var today1 = new Date();
+            var getNewScore = today1.getSeconds()+(today1.getMinutes()*60)+(today1.getHours()*3600);
+            if ((getNewScore - getInitScore)===settings.seconds_until_message){
+                showModal("customModal");
+                clearInterval(intervalID);
+            }
         
-    }
-    var intervalID = window.setInterval(checkTooLong,1);
+        }
+        var intervalID = window.setInterval(checkTooLong,1);
     }
     
 </script>
