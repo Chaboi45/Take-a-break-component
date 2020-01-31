@@ -6,7 +6,7 @@ seconds_until_message:
 message:
   default: "It seems like you're on the forums for a while, consider taking a break!"
   type: string
-  description: "The message to display when the staff member is on the forums for too long."
+  description: "The message to display when the user is on the forums for too long."
 message_title:
   default: "Take a break!"
   type: string
