@@ -1,5 +1,5 @@
 seconds_until_message:
-  default: 10
+  default: 1800
   min: 5
   type: integer
   description: "The amounts of seconds until the message is shown."
