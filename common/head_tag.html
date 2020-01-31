@@ -15,15 +15,15 @@
       return thisUser.admin || thisUser.moderator
     }
     // console.log(settings.message)
-    if (settings.on_for_non_staff==false){
-    if (isStaff()==true){
+    if (settings.on_for_non_staff===false){
+    if (isStaff()===true){
         var today = new Date();
     var getInitScore = today.getSeconds()+(today.getMinutes()*60)+(today.getHours()*3600);
     
     function checkTooLong(){
         var today1 = new Date();
         var getNewScore = today1.getSeconds()+(today1.getMinutes()*60)+(today1.getHours()*3600);
-        if ((getNewScore - getInitScore)==settings.seconds_until_message){
+        if ((getNewScore - getInitScore)===settings.seconds_until_message){
             showModal("customModal");
             clearInterval(intervalID);
         }
@@ -42,7 +42,7 @@
     function checkTooLong(){
         var today1 = new Date();
         var getNewScore = today1.getSeconds()+(today1.getMinutes()*60)+(today1.getHours()*3600);
-        if ((getNewScore - getInitScore)==settings.seconds_until_message){
+        if ((getNewScore - getInitScore)===settings.seconds_until_message){
             showModal("customModal");
             clearInterval(intervalID);
         }
