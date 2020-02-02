@@ -13,6 +13,7 @@
         let isStaff = () => {
             const thisUser = Discourse.User.current(); 
             return thisUser.admin || thisUser.moderator
+            console.log(thisUser)
     }
     // console.log(settings.message)
     if (settings.on_for_non_staff===false){
