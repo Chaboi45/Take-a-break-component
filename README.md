@@ -11,3 +11,24 @@ Alerts a member to tell them to take a break if they have been on the forums for
 ## More info.
 Check the official post:
 https://meta.discourse.org/t/take-a-break-theme-component/140248
+
+## Version Notes:
+### Version 0.2 
+* Many code optimizations
+* Discourse var -> let/const migration
+* Equality is fixed
+* Cleaned code for better eye-viewing
+* Begin to prep for Discourse JS files migration
+### Version 0.1
+* Added a toggleable option for enabling this for non-staff users. (Off by default)
+* Fixed intervals not clearing correctly
+* Some small changes for better optimization
+### Version 0.0
+* Released! 🎉
+
+This theme component is a way to remind staff members to periodically take a break. After a certain time frame, staff members will be reminded to take a break, which is essential for the health of moderators. All features and demos are located [here.](https://meta.discourse.org/t/take-a-break-theme-component/140248/)
+
+Features include:
+* Custom Message Title
+* Custom Message Text
+* Custom Message Delay
