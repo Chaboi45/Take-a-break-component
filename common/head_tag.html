@@ -11,7 +11,7 @@
     
         const showModal = require("discourse/lib/show-modal").default;
         let isStaff = () => {
-            const thisUser = Discourse.User.current(); 
+            const thisUser = api.getCurrentUser(); 
             return thisUser.admin || thisUser.moderator
             console.log(thisUser)
     }
