@@ -13,6 +13,8 @@ Check the official post:
 https://meta.discourse.org/t/take-a-break-theme-component/140248
 
 ## Version Notes:
+### Version 0.3
+* Fixed outdated API method. Thank you @eviltrout for the PR!
 ### Version 0.2 
 * Many code optimizations
 * Discourse var -> let/const migration
